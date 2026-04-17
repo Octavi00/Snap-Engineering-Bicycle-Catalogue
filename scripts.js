@@ -23,13 +23,6 @@
  *
  */
 
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
-
 
 //basic url's
 /*
@@ -45,12 +38,12 @@ let titles = [
 ];
 
 let main_part_categories = [
-  "Front Forks",
-  "Brake systems",
-  "Rear Suspension",
-  "Tires",
+  "Front_Forks",
+  "Brake_systems",
+  "Rear_Suspension",
+  "Wheels",
   "Powertrains",
-  "Misceleaneous",
+  "Miscellaneous",
   "All",
 ]
 
@@ -89,10 +82,8 @@ function loadHomePage()
   {
     let title = main_part_categories[i];
     
-    //NOTE: make a function to get and insert urls
-    let imageURL = ""
+    let imageURL = getImgURL("homepage", title);
     
-
     const nextCategory = templateCategory.cloneNode(true); //Copy this created template
     
     editCategoryContent(nextCategory, title, imageURL); // Add a title + image
@@ -119,6 +110,13 @@ function editCategoryContent(category, newTitle, newImageURL){
   categoryHeader.textContent = newTitle;
 
   categoryImage.src = newImageURL;
+  
+  //Loads cute kitten image upon error
+  categoryImage.onerror = () => {
+    categoryImage.src = "images/default.jpg";
+  };
+  
+
   categoryImage.alt = newTitle + " Image";
   
   //loads new page when Title or image is clicked
@@ -126,6 +124,11 @@ function editCategoryContent(category, newTitle, newImageURL){
 
   //prints for debugging
   console.log("New category: ", newTitle, "- html: ", category);
+}
+
+function getImgURL (category, title){
+  //goes to folder catgory, finds image with matching title, and returns img url if found, otherwise ""
+  return "images/" + category + "/" + title + ".jpg"
 }
 
 

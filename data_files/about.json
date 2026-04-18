@@ -1,0 +1,16 @@
+{
+    "theme": "about-theme",
+    "title": "About This Project",
+    "description": "This is a 5 day project website created as part of my own application to Snap Academy. I was tasked to make a catalogue website, and I knew immediately that I would like to provide a basic bike parts catalogue for riders like me who enjoy both the ride and the design. \n\tKeep pushing Rider",
+    "profiles": [
+        {
+        "name": "GitHub",
+        "url": "https://github.com/Octavi00"
+        },
+
+        {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/octavi00/"
+        }
+    ]
+}

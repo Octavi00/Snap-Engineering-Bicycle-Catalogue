@@ -24,19 +24,6 @@
  */
 
 
-//basic url's
-/*
-*/
-
-
-
-// This is an array of strings (TV show titles)
-let titles = [
-  "Fresh Prince of Bel Air",
-  "Curb Your Enthusiasm",
-  "East Los High",
-];
-
 let main_part_categories = [
   "Front_Forks",
   "Brake_systems",
@@ -66,41 +53,30 @@ let powertrains_parts = [
 ]
 /////////////////////////////////////////////////////
 
-const loaders = {
-  homepage : loadHomePage,
-  aboutme : loadAboutPage,
-}
+async function loadHomePage() {
+  const response = await fetch("data_files/home_page.json");
+  const data = await response.json();
 
-//Page loaders
-function loadHomePage()
-{
   const mainCategory_Container = document.getElementById("main-category-container");
-  mainCategory_Container.innerHTML = ""; //homepage url extension
+  mainCategory_Container.innerHTML = "";
+
   const templateCategory = document.querySelector(".category");
-  
-  for (let i = 0; i < main_part_categories.length; i++)
-  {
-    let title = main_part_categories[i];
-    
-    let imageURL = getImgURL("homepage", title);
-    
-    const nextCategory = templateCategory.cloneNode(true); //Copy this created template
-    
-    editCategoryContent(nextCategory, title, imageURL); // Add a title + image
-    mainCategory_Container.appendChild(nextCategory); // Add into category container
-  }
+
+  data.Main_Categories.forEach(cat => {
+    const nextCategory = templateCategory.cloneNode(true);
+
+    editCategoryContent(
+      nextCategory,
+      cat.name,
+      cat.img_url,
+      cat.page_url
+    );
+
+    mainCategory_Container.appendChild(nextCategory);
+  });
 }
 
-function loadAboutPage()
-{
-  alert(
-    "This is a good stopping point"
-  );
-}
-
-
-
-function editCategoryContent(category, newTitle, newImageURL){
+function editCategoryContent(category, newTitle, newImageURL, pageURL) {
   category.style.display = "block";
 
   const categoryHeader = category.querySelector("h2");
@@ -108,49 +84,23 @@ function editCategoryContent(category, newTitle, newImageURL){
   const link = category.querySelector(".category-link");
 
   categoryHeader.textContent = newTitle;
-
   categoryImage.src = newImageURL;
-  
-  //Loads cute kitten image upon error
+  categoryImage.alt = newTitle + " Image";
+
   categoryImage.onerror = () => {
     categoryImage.src = "images/default.jpg";
   };
-  
 
-  categoryImage.alt = newTitle + " Image";
-  
-  //loads new page when Title or image is clicked
-  link.href = "index.html?category=" + encodeURIComponent(newTitle);
+  link.href = pageURL || "#";
 
-  //prints for debugging
-  console.log("New category: ", newTitle, "- html: ", category);
+  console.log("New category:", newTitle, "->", pageURL);
 }
 
-function getImgURL (category, title){
-  //goes to folder catgory, finds image with matching title, and returns img url if found, otherwise ""
-  return "images/" + category + "/" + title + ".jpg"
+function loadAboutPage() {
+  console.log("About page loader");
 }
 
+//deafult page loader
+document.addEventListener("DOMContentLoaded", loadHomePage);
 
 
-
-//Default Page loader when website is openned
-document.addEventListener("DOMContentLoaded", loaders["homepage"]);
-
-
-
-
-
-
-
-
-//button functions
-function home_page_clicked() {
-  console.log("Home Page clicked");
-  loaders["homepage"]?.();
-}
-
-function about_page_clicked() {
-  console.log("About Page clicked");
-  loaders["aboutme"]?.();
-}

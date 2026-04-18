@@ -1,0 +1,41 @@
+{
+    "title": "Home Page",
+    "description": "Welcome to the Shop.",
+    "Main_Categories": [
+        {
+        "name": "Front Forks",
+        "page_url": "html_pages/front_forks.html",
+        "img_url": "images/homepage/front_forks.jpg"
+        },
+        {
+        "name": "Brake Systems",
+        "page_url": "",
+        "img_url": "images/homepage/brake_systems.jpg"
+        },
+        {
+        "name": "Rear Suspension",
+        "page_url": "",
+        "img_url": "images/homepage/rear_suspension.jpg"
+        },
+        {
+        "name": "Wheels",
+        "page_url": "",
+        "img_url": "images/homepage/wheels.jpg"
+        },
+        {
+        "name": "Powertrains",
+        "page_url": "",
+        "img_url": "images/homepage/powertrains.jpg"
+        },
+        {
+        "name": "Miscellaneous",
+        "page_url": "",
+        "img_url": "images/homepage/miscellaneous.jpg"
+        },
+        {
+        "name": "All",
+        "page_url": "",
+        "img_url": "images/homepage/all.jpg"
+        }
+    ]
+}

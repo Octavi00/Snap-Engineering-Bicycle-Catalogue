@@ -25,28 +25,7 @@ body {
 
 
 
-
-.main-header {
-  background-color: rgb(104, 80, 80);
-  padding-bottom: 10px;
-}
-
-.title {
-  text-align: center;
-  margin: 0;
-  font-size: 8em;
-  font-family: "Helvetica";
-  font-weight: normal;
-  color: white;
-}
-
-.img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-
+/* Footer setup */
 .footer {
   margin-top: auto;
   display: flex;
@@ -79,7 +58,7 @@ button {
   padding: 10px;
 }
 
-#forks-container {
+#items-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -88,7 +67,7 @@ button {
 
 
 
-/* Title box */
+/* Boxes + cards */
 .title-box {
   background-color: rgba(172, 106, 106, 0.945);
   color: white;
@@ -97,20 +76,40 @@ button {
   text-align: center;
 }
 
-/* innner box */
 .content-box {
   background-color: #5a5a5a;
   padding: 25px;
   border-radius: 0 0 10px 10px; /* rounded bottom only */
 }
 
-/* text styling */
+/* Planning to remove this later and setup a side bar afterwards */
+.filter-box {
+  background-color: rgba(0, 0, 0, 0.45);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.item-card {
+  display: flex;
+  gap: 15px;
+  background-color: #5a5a5a;
+  padding: 15px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+
+
+
+/* --- box styling --- */
 .content-box p {
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-/* profile links */
+/* profile links in about page */
 .content-box ul {
   list-style: circle;
   padding: 0;
@@ -129,19 +128,6 @@ button {
   text-decoration: underline;
 }
 
-/* Helps with \t or \n in json description */
-#description {
-  white-space: pre-wrap;
-}
-
-.item-card {
-  display: flex;
-  gap: 15px;
-  background-color: #5a5a5a;
-  padding: 15px;
-  border-radius: 10px;
-  align-items: center;
-}
 
 .item-img {
   width: 120px;
@@ -163,3 +149,15 @@ button {
 }
 
 
+
+.filter-option {
+  display: flex;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+
+/* Helps with \t or \n in json description */
+#description {
+  white-space: pre-wrap;
+}

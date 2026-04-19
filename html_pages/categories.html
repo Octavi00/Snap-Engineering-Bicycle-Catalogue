@@ -2,16 +2,15 @@
 <html>
 
   <head>
-    <title> Front Fork Suspension </title>
-    <meta name="description" content="Front Fork Suspension page" />
+    <title> Categories </title>
+    <meta name="description" content="Categories page" />
     <link rel="stylesheet" href="inner.css" />
-    <script type="text/javascript" src="../script_controllers/front_forks.js"></script>
+    <script type="text/javascript" src="../script_controllers/categories.js"></script>
   </head>
 
   <body>
 
     <section class="about-container">
-
         <div class="title-box">
             <h1 id="title"></h1>
         </div>
@@ -20,14 +19,22 @@
             <p id="description"></p>
             <ul id="profiles"></ul>
         </div>
-        
     </section>
+
+
+    <div class="filter-box">
+        <h3>Brands</h3>
+        <div id="brand-filters"></div>
+
+        <h3>Features</h3>
+        <div id="keyword-filters"></div>
+    </div>
 
 
 
 
     <section class="data-section">
-        <div id="forks-container"></div>
+        <div id="items-container"></div>
 
         <!-- template -->
         <div class="item-card" style="display: none;">

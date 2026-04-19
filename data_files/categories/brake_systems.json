@@ -1,0 +1,37 @@
+{
+  "background_image": "../images/themes/brake_system-theme.jpg",
+  "title": "Brake Systems",
+  "description": "Brake systems are crucial to riding. They not only control speed, but provide confidence to keep pushing in knowing you can stop when you need to. There are many different types of brake systems, but it's best to invest in the ones you can trust to stop you before the tree does.",
+  "items": [
+
+    {
+      "brand": "Shimano",
+      "name": "BR-MT410 Disc Brake",
+      "price": 61.00,
+      "url": "https://www.jensonusa.com/shimano-br-mt410-disc-brake",
+      "img_url": "",
+      "keywords": ["Hydraulic", "Front", "Rear", "Post Mount"],
+      "date_modified": "4/18/2026"
+    },
+
+    {
+      "brand": "Shimano",
+      "name": "BR-MT201 Disc Brake",
+      "price": 36.00,
+      "url": "https://www.jensonusa.com/shimano-br-mt201-disc-brake",
+      "img_url": "",
+      "keywords": ["Hydraulic", "Front", "Rear", "Post Mount"],
+      "date_modified": "4/18/2026"
+    },
+
+    {
+      "brand": "Tektro",
+      "name": "MD-M300 Disc Brake",
+      "price": 27.75,
+      "url": "https://www.amazon.com/Tektro-MD-M300-Actuated-Mechanical-Long-Pull/dp/B07C8BTYN8/ref=sr_1_1?crid=1TFQ0XXVGFYPC&dib=eyJ2IjoiMSJ9.ypnIJz4hXbVwjAOUEAG6ID8ohOLWdRkePkgIAYb0yiq_u2MLAqFPaR6-lYvhcDGqQB52wo13xwvz6IZLoegJXnkjGUfZ3V7QUxGUzreL07_0LYJD0EKTWnqk4OsCXxEAyl9GrcEdpJU9rxk-aiMl_EYjiKswj0vZxM_h4LIDdY_y1k8PGEk-0zJLsnsCqqp-rEWDl5Q8_jEyTXdER9wHrpPPd9PxMR9yzgzBfDva640cjhusiRU9_T1pMaQwRgcdUTsdT03TURfkOy9rsRmrM-z7pxed4gzjAaAwU8TBodU.T4iJpGQ54_EymG-w9mLdAc3UyZjE-lD8El1HsQ2R77k&dib_tag=se&keywords=tektro+mechanical+mtb+brakes&qid=1776563569&sprefix=tektro+mechanical+mtb+brakeset%2Caps%2C141&sr=8-1",
+      "img_url": "",
+      "keywords": ["Mechanical", "Front", "Rear", "Post Mount", "Flat Mount"],
+      "date_modified": "4/18/2026"
+    }
+  ]
+}

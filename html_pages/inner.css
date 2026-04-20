@@ -4,11 +4,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: #494646;
-  /*
-  can add images later
-  background-image: url(../images/aboutpage/cool_mountain.jpg);
-  */
 }
+
+
+
+
+
+
 
 
 /*themes*/
@@ -22,6 +24,10 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+
+
+
 
 
 
@@ -52,6 +58,10 @@ button {
 
 
 
+
+
+
+
 /* page-specific containers */
 .about-container {
   max-width: 800px;
@@ -64,6 +74,10 @@ button {
   flex-direction: column;
   gap: 15px;
 }
+
+
+
+
 
 
 
@@ -83,8 +97,7 @@ button {
   border-radius: 0 0 10px 10px; /* rounded bottom only */
 }
 
-/* Planning to remove this later and setup a side bar afterwards */
-.filter-box {
+.controls-box {
   background-color: rgba(0, 0, 0, 0.45);
   color: white;
   padding: 15px;
@@ -104,7 +117,11 @@ button {
 
 
 
-/* --- box styling --- */
+
+
+
+
+/* --- box stylings --- */
 .content-box p {
   line-height: 1.6;
   margin-bottom: 20px;
@@ -129,6 +146,20 @@ button {
   text-decoration: underline;
 }
 
+.content-box img {
+  margin-top: 20px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
 
 .item-img {
   width: 120px;
@@ -151,11 +182,26 @@ button {
 
 
 
-.filter-option {
+
+
+
+
+
+#keyword-filters {
   display: flex;
-  margin: 6px 0;
-  cursor: pointer;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
 }
+
+#sort-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
 
 
 /* Helps with \t or \n in json description */

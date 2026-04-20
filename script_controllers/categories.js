@@ -8,71 +8,13 @@
 all_items = [];
 all_keywords = [];
 
-function createItemObject(item)
-{
-  // returns a fully built Item with keywords for later sort / organization
-  // also defaults all types incase of break or missing from json 
-  return {
-    brand: item.brand || "",
-    name: item.name || "",
-    price: item.price ?? null,
-    url: item.url || "",
-    img_url: item.img_url || "",
-    keywords: item.keywords || [],
-    date_added: item.date_added || "",
-  };
-}
-
-// Creates a map of item objects
-function buildItemsArray(items) {
-  return items.map(createItemObject);
-}
-
-
-
-//actually make items visible on page by filling in template and appending to container
-function renderItems(items)
-{
-  const container = document.getElementById("items-container");
-  container.innerHTML = "";
-  const template = document.querySelector(".item-card");
-
-  items.forEach(item => {
-    //copy template
-    const card = template.cloneNode(true);
-    card.style.display = "flex";
-
-    const img = card.querySelector(".item-img");
-    const name = card.querySelector(".item-name");
-    const brand = card.querySelector(".item-brand");
-    const price = card.querySelector(".item-price");
-    const link = card.querySelector(".item-link");
-
-    //set template values
-    name.textContent = item.name;
-    brand.textContent = item.brand;
-    price.textContent = "$" + item.price.toFixed(2);
-    link.href = item.url;
-
-    //optional image, so no need for everything to have images
-    if (item.img_url && item.img_url !== "") {
-      img.src = item.img_url;
-      img.alt = item.name;
-    } else {
-      img.style.display = "none";
-    }
-
-    container.appendChild(card);
-
-  });
-}
-
 
 
 
 //Note: uses async to wait on loading page while function finishes
 async function loadPage() {
   const params = new URLSearchParams(window.location.search);
+  //find page category from url
   const category = params.get("data");
 
   if (category === "all") {
@@ -82,8 +24,6 @@ async function loadPage() {
     await singleCategoryPage(category);
   }
 }
-  
-  
 
 
 async function singleCategoryPage(category) {
@@ -112,11 +52,12 @@ async function singleCategoryPage(category) {
 
 
 async function allCategoriesPage() {
-  //run a for loop fetching all data files and building items array and keywords array for each, then render all items together on page
+  //runs a for loop fetching all data files, and in turn builds items array and keywords array for each.
+  //We store all of them in the temporary combined variables, then render all combined items once finisjed
   let all_items_combined = [];
   let all_keywords_combined = new Set();
 
-  //Note: data here implies data from all.json wihtin categories folder
+  //Note: data here implies data from all.json within categories folder
   const data = await fetchData("all");
   if (!data) {
     // If null, return early, error is already handled in fetchData()
@@ -176,6 +117,8 @@ async function fetchData(category) {
 }
 
 
+
+
 //small helper function for setting background image
 async function setBackgroundImage(image_url) {
   if (image_url && image_url !== "") {
@@ -189,11 +132,116 @@ async function setBackgroundImage(image_url) {
 
 
 
+function createItemObject(item)
+{
+  // returns a fully built Item with keywords for later sort / organization
+  // also defaults all types incase of break or missing from json 
+  return {
+    brand: item.brand || "",
+    name: item.name || "",
+    price: item.price ?? null,
+    url: item.url || "",
+    img_url: item.img_url || "",
+    keywords: item.keywords || [],
+    date_added: item.date_added || "",
+  };
+}
+
+
+// Creates a map of item objects
+function buildItemsArray(items) {
+  return items.map(createItemObject);
+}
+
+
+
+
+//renders items onto page by filling in template and appending to container
+function renderItems(items)
+{
+  const container = document.getElementById("items-container");
+  container.innerHTML = "";
+  const template = document.querySelector(".item-card");
+
+  items.forEach(item => {
+    //copy template
+    const card = template.cloneNode(true);
+    card.style.display = "flex";
+
+    const img = card.querySelector(".item-img");
+    const name = card.querySelector(".item-name");
+    const brand = card.querySelector(".item-brand");
+    const price = card.querySelector(".item-price");
+    const link = card.querySelector(".item-link");
+
+    //set template values
+    name.textContent = item.name;
+    brand.textContent = item.brand;
+    price.textContent = "$" + item.price.toFixed(2);
+    link.href = item.url;
+
+    //optional image, so no need for everything to have images
+    if (item.img_url && item.img_url !== "") {
+      img.src = item.img_url;
+      img.alt = item.name;
+    } else {
+      img.style.display = "none";
+    }
+
+    container.appendChild(card);
+
+  });
+
+  //now propagate filters based on keywords from items, so they are ready to be used when user clicks them
+  propagateKeywordFilters();
+}
+
+
+
+
 
 //Default Page loader when website is openned
 document.addEventListener("DOMContentLoaded", loadPage);
 
-//Previous page button
+
+
+
+//Button propagations + functions
+function propagateKeywordFilters() {
+  const keywordContainer = document.getElementById("keyword-filters");
+  //clear previous filters from other pages / urls just in case
+  keywordContainer.replaceChildren();
+
+  //Note: A set inherently avoids duplicate values, so no worries about inserting
+  const keywordSet = new Set();
+
+  //iterate through all items and add keywords to set
+  all_items.forEach(item => {
+    item.keywords.forEach(keyword => {
+      keywordSet.add(keyword);
+    });
+  });
+
+  //Sorts keywords alphabetically for an easier navigation experience
+  const sortedKeywords = [...keywordSet].sort((a, b) => a.localeCompare(b));
+
+  //now create and insert buttons for each keyword, and add event listener to filter by keyword when clicked
+  sortedKeywords.forEach(keyword => {
+    const button = document.createElement("button");
+    button.classList.add("filter-option");
+    button.textContent = keyword;
+
+    button.addEventListener("click", () => {
+      filterByKeyword(keyword);
+    });
+
+    keywordContainer.appendChild(button);
+  });
+}
+
+
+
+
 function previousPage() {
     if (history.length > 1) {
         history.back();
@@ -201,3 +249,65 @@ function previousPage() {
     window.location.href = "../index.html";
     }
 }
+
+
+
+
+
+
+
+
+
+//Clears all items from current page
+async function clearAllItems() {
+  const container = document.getElementById("items-container");
+  //this function can also replace children instead of just clearing, but I will stay with using renderItems 
+  container.replaceChildren(); 
+}
+
+
+
+
+//Sorting functions
+async function increasingPrice() {
+  //clear items and re-render with new sort
+  clearAllItems();
+
+  //mutates array order only, so sort can be combined with other filters
+  all_items.sort((a, b) => a.price - b.price);
+  renderItems(all_items);
+}
+
+async function decreasingPrice() {
+  clearAllItems();
+  //also mutates order just like increasing function
+  all_items.sort((a, b) => b.price - a.price);
+  renderItems(all_items);
+}
+
+async function alphabeticalSort() {
+  clearAllItems();
+  //uses localeCompare for proper alphabetical sorting, also avoids mutating all_items while still sorting and printing sorted items
+  all_items.sort((a, b) => a.name.localeCompare(b.name));
+  renderItems(all_items);
+}
+
+
+
+
+//filter function
+async function filterByKeyword(keyword) {
+  clearAllItems();
+  //uses .includes() to check if keyword is present
+  //Note: this filter is case sensitive, and the json data is currently formatting keywords in lowercase
+  const filteredItems = all_items.filter(item => item.keywords.includes(keyword));
+
+  //it may be possible that a keyword with no items is selected, so we can alert the user of this by printing onto the screen
+  if (filteredItems.length === 0) {
+    alert("No items found with the keyword: " + keyword);
+    return;
+  }
+
+  renderItems(filteredItems);
+}
+

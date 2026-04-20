@@ -27,6 +27,10 @@ async function loadAboutPage()
         li.appendChild(a);
         profilesList.appendChild(li);
     });
+
+    //create + insert profile picture
+    const profilePicture = document.getElementById("profile-picture");
+    profilePicture.src = data.profile_picture;
 }
 
 

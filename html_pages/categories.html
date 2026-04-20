@@ -19,19 +19,26 @@
 
             <div class="content-box">
                 <p id="description"></p>
-                <ul id="profiles"></ul>
             </div>
         </section>
 
 
 
 
-        <div class="filter-box">
-            <h3>Brands</h3>
-            <div id="brand-filters"></div>
-
+        <div class="controls-box">
             <h3>Features</h3>
-            <div id="keyword-filters"></div>
+            <div id="keyword-filters">
+                <!-- template: Propagate keword filter buttons -->
+            </div>
+
+            <h3> Sort By </h3>
+            <div id = "sort-options">
+                <!-- Hard insert sort filter buttons for simplicity -->
+                <button onclick="increasingPrice()">Low → High</button>
+                <button onclick="decreasingPrice()">High → Low</button>
+                <button onclick="alphabeticalSort()">A → Z</button>
+            </div>
+
         </div>
 
 

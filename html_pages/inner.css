@@ -92,7 +92,8 @@ button {
 }
 
 .content-box {
-  background-color: rgba(90, 90, 90, 0.7);
+  background-color: rgba(90, 90, 90, 0.9);
+  color: antiquewhite;
   padding: 25px;
   border-radius: 0 0 10px 10px; /* rounded bottom only */
 }

@@ -4,8 +4,9 @@
 
 
 
-//global items array + keywords array
+//global items array + filtered items array + keywords array
 all_items = [];
+filtered_items = [];
 all_keywords = [];
 
 
@@ -35,19 +36,16 @@ async function singleCategoryPage(category) {
     return;
   }
 
-  //set theme image
-  setBackgroundImage(data.background_image);
+  //set theme: background image, title, and description
+  setTheme(data.background_image, data.title, data.description);
   
-  //Set title and description
-  document.getElementById("title").textContent = data.title;
-  document.getElementById("description").textContent = data.description;
-  
-  //build items array and keywords array for later use in filters
+  //build items array and keywords array for later use in filters, and default filtered items to all items for now
   all_items = buildItemsArray(data.items);
+  filtered_items = all_items; 
   all_keywords = [...new Set(all_items.flatMap(item => item.keywords))];
     
-  //now render all items as default page view
-  renderItems(all_items);     
+  //default sort is newest items first, (rendering is included in sort functions)
+  newestDateSort();
 }
 
 
@@ -64,12 +62,8 @@ async function allCategoriesPage() {
     return;
   }
 
-  //set theme image
-  setBackgroundImage(data.background_image);
-  
-  //Set title and description
-  document.getElementById("title").textContent = data.title;
-  document.getElementById("description").textContent = data.description;
+  //set theme: background image, title, and description
+  setTheme(data.background_image, data.title, data.description);
   
   const categories = data.categories;
 
@@ -83,11 +77,17 @@ async function allCategoriesPage() {
     }
   }
 
-  //now rewrite global arrays with combined data and render all items together on page
+  //now rewrite global arrays with combined data and render all items together on page, and copy all_items into filtered_items by default
   all_items = all_items_combined;
+  filtered_items = all_items; 
   all_keywords = Array.from(all_keywords_combined);
-  renderItems(all_items);
+  //default sort
+  newestDateSort();
 }
+
+
+
+
 
 
 
@@ -119,8 +119,9 @@ async function fetchData(category) {
 
 
 
-//small helper function for setting background image
-async function setBackgroundImage(image_url) {
+//small helper function for setting up page theme
+async function setTheme(image_url, title, description) {
+  //set background image
   if (image_url && image_url !== "") {
     document.body.style.setProperty('background-image', `url("${image_url}")`);
   }
@@ -128,8 +129,16 @@ async function setBackgroundImage(image_url) {
     // Set none background image if none provided in data
     document.body.style.setProperty('background-image', 'none');
   }
+
+  //Set title and description
+  document.getElementById("title").textContent = title;
+  document.getElementById("description").textContent = description;
 }
 
+// Creates a map of item objects
+function buildItemsArray(items) {
+  return items.map(createItemObject);
+}
 
 
 function createItemObject(item)
@@ -143,15 +152,35 @@ function createItemObject(item)
     url: item.url || "",
     img_url: item.img_url || "",
     keywords: item.keywords || [],
-    date_added: item.date_added || "",
+    date_added: item.date_modified || "0",
+    card: createCard(item.brand, item.name, item.price, item.url, item.img_url),
   };
 }
 
 
-// Creates a map of item objects
-function buildItemsArray(items) {
-  return items.map(createItemObject);
+function createCard(brand, name, price, url, img_url) {
+  //creates a card element for an item
+  //item template
+  const template = document.querySelector(".item-card");
+  const card = template.cloneNode(true);
+  card.style.display = "flex";
+
+  //set template values
+  card.querySelector(".item-name").textContent = name;
+  card.querySelector(".item-brand").textContent = brand;
+  card.querySelector(".item-price").textContent = "$" + price.toFixed(2);
+  card.querySelector(".item-link").href = url;
+
+  //optional image, so no need for everything to have images
+  if (img_url && img_url !== "") {
+    card.querySelector(".item-img").src = img_url;
+    card.querySelector(".item-img").alt = name;
+  } else {
+    card.querySelector(".item-img").style.display = "none";
+  }
+  return card;
 }
+
 
 
 
@@ -161,35 +190,9 @@ function renderItems(items)
 {
   const container = document.getElementById("items-container");
   container.innerHTML = "";
-  const template = document.querySelector(".item-card");
 
   items.forEach(item => {
-    //copy template
-    const card = template.cloneNode(true);
-    card.style.display = "flex";
-
-    const img = card.querySelector(".item-img");
-    const name = card.querySelector(".item-name");
-    const brand = card.querySelector(".item-brand");
-    const price = card.querySelector(".item-price");
-    const link = card.querySelector(".item-link");
-
-    //set template values
-    name.textContent = item.name;
-    brand.textContent = item.brand;
-    price.textContent = "$" + item.price.toFixed(2);
-    link.href = item.url;
-
-    //optional image, so no need for everything to have images
-    if (item.img_url && item.img_url !== "") {
-      img.src = item.img_url;
-      img.alt = item.name;
-    } else {
-      img.style.display = "none";
-    }
-
-    container.appendChild(card);
-
+    container.appendChild(item.card);
   });
 
   //now propagate filters based on keywords from items, so they are ready to be used when user clicks them
@@ -206,7 +209,19 @@ document.addEventListener("DOMContentLoaded", loadPage);
 
 
 
-//Button propagations + functions
+
+
+
+
+
+
+
+
+
+
+
+
+//Button propagations
 function propagateKeywordFilters() {
   const keywordContainer = document.getElementById("keyword-filters");
   //clear previous filters from other pages / urls just in case
@@ -239,15 +254,12 @@ function propagateKeywordFilters() {
   });
 }
 
-
-
-
 function previousPage() {
-    if (history.length > 1) {
-        history.back();
-    } else {
+  if (history.length > 1) {
+    history.back();
+  } else {
     window.location.href = "../index.html";
-    }
+  }
 }
 
 
@@ -258,15 +270,19 @@ function previousPage() {
 
 
 
-//Clears all items from current page
-async function clearAllItems() {
+
+
+
+
+
+
+
+//Filter + Sort helper function: clears all items from current page
+function clearAllItems() {
   const container = document.getElementById("items-container");
   //this function can also replace children instead of just clearing, but I will stay with using renderItems 
   container.replaceChildren(); 
 }
-
-
-
 
 //Sorting functions
 async function increasingPrice() {
@@ -274,40 +290,75 @@ async function increasingPrice() {
   clearAllItems();
 
   //mutates array order only, so sort can be combined with other filters
-  all_items.sort((a, b) => a.price - b.price);
-  renderItems(all_items);
+  filtered_items.sort((a, b) => a.price - b.price);
+  renderItems(filtered_items);
 }
 
 async function decreasingPrice() {
   clearAllItems();
   //also mutates order just like increasing function
-  all_items.sort((a, b) => b.price - a.price);
-  renderItems(all_items);
+  filtered_items.sort((a, b) => b.price - a.price);
+  renderItems(filtered_items);
 }
 
 async function alphabeticalSort() {
   clearAllItems();
   //uses localeCompare for proper alphabetical sorting, also avoids mutating all_items while still sorting and printing sorted items
-  all_items.sort((a, b) => a.name.localeCompare(b.name));
-  renderItems(all_items);
+  filtered_items.sort((a, b) => a.name.localeCompare(b.name));
+  renderItems(filtered_items);
 }
 
+async function rev_alphabeticalSort() {
+  clearAllItems();  
+  //reverses standard alphabet sort
+  filtered_items.sort((a, b) => b.name.localeCompare(a.name));
+  renderItems(filtered_items);
+}
+
+async function newestDateSort() {
+  clearAllItems();
+  //sorts by date added, with newest items first. Note: this relies on the date format in the json data being consistent and properly formatted for Date parsing
+  filtered_items.sort((a, b) => new Date(b.date_added) - new Date(a.date_added));
+  renderItems(filtered_items);
+}
+
+async function oldestDateSort() {
+  clearAllItems();
+  //sorts by date added, with oldest items first
+  filtered_items.sort((a, b) => 
+    new Date(a.date_added) - new Date(b.date_added)
+);
+  renderItems(filtered_items);
+}
+
+  
 
 
 
-//filter function
+
+
+
+//filter functions
+async function clearFilters() {
+  clearAllItems();
+  filtered_items = all_items;
+  renderItems(filtered_items);
+}
+
 async function filterByKeyword(keyword) {
   clearAllItems();
-  //uses .includes() to check if keyword is present
-  //Note: this filter is case sensitive, and the json data is currently formatting keywords in lowercase
-  const filteredItems = all_items.filter(item => item.keywords.includes(keyword));
 
-  //it may be possible that a keyword with no items is selected, so we can alert the user of this by printing onto the screen
-  if (filteredItems.length === 0) {
+  //uses .includes() to check if keyword is present
+  //Note: this filter is case sensitive, and the json data is currently formatting all keywords in lowercase
+  filtered_items = all_items.filter(item => item.keywords.includes(keyword));
+  renderItems(filtered_items);
+
+  //it may be possible that a keyword with no items is selected during testing and future changes, so we can alert the user of this by printing onto the screen
+  if (filtered_items.length === 0) {
     alert("No items found with the keyword: " + keyword);
     return;
   }
 
-  renderItems(filteredItems);
+  renderItems(filtered_items);
 }
 

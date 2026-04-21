@@ -6,7 +6,7 @@
 
     {
       "brand": "DNM",
-      "name": "BURNER-RCP 2S",
+      "name": "BURNER-RCP 2S Rear Shock",
       "price": 139.98,
       "url": "https://www.amazon.com/DNM-Burner-RCP-Downhill-Mountain-220x66mm/dp/B07D1X98C4/ref=sr_1_3?crid=1RMVBOHIE1GDI&dib=eyJ2IjoiMSJ9.cA5vPa48bwPKUBJHIxvlvyTWEMzLtIAf62DniiJG9k5PbkYfv8hj8S0NFTYlz0PW6kHCNeSKzDO4guet7cvNH9OFV_7DXImiBPr0uHw8BNsID4RNBzqWRirRof-ztPuiohCMsHYS2Wd1P5DKMj0qDhlD81mbn-GgjlBdHuaqFkarnY1glUaWkUh9y-DMJtBm-K6HtsFcKHDpwE009dFP5hn9LwFnJrUKyIgxpRT0m2jYr1GkwloLo126VJt0OnKKqLapTmjKKfyFYSXAhVOBb58SaY2wgLSVnWplOShCCHQ.moUxrkE0pculRcMglOhfsIJn10PBZVGgREhZ3KHTJDc&dib_tag=se&keywords=fox%2Brear%2Bshock&qid=1776564332&sprefix=fox%2Brear%2Bshock%2Caps%2C210&sr=8-3&th=1",
       "img_url": "",
@@ -15,12 +15,39 @@
     },
     {
       "brand": "Fox",
-      "name": "Float X",
+      "name": "Float X Rear Shock",
       "price": 199.00,
       "url": "https://www.jensonusa.com/fox-float-x-performance-2022-oe-packaged-3",
       "img_url": "../images/items/fox_float_x.jpg",
       "keywords": ["air", "230mm"],
       "date_modified": "4-20-2026"
+    },
+    {
+      "brand": "RockShox",
+      "name": "SIDLuxe Ultimate 2P Rear Shock",
+      "price": 499.00,
+      "url": "https://www.rei.com/product/233595/rockshox-sidluxe-ultimate-2p-tru-shock",
+      "img_url": "",
+      "keywords": ["air", "165mm"],
+      "date_modified": "4-21-2026"
+    },
+    {
+      "brand": "Marzocchi",
+      "name": "Bomber Inline Rear Shock",
+      "price": 329.00,
+      "url": "https://www.jensonusa.com/marzocchi-bomber-inline-metric-shock",
+      "img_url": "",
+      "keywords": ["air", "210mm"],
+      "date_modified": "4-21-2026"
+    },
+    {
+      "brand": "Marzocchi",
+      "name": "Bomber CR Rear Shock",
+      "price": 329.00,
+      "url": "https://www.jensonusa.com/marzocchi-bomber-cr-metric-rear-shock-7",
+      "img_url": "",
+      "keywords": ["coil", "230mm"],
+      "date_modified": "4-21-2026"
     }
   ]
 }

@@ -32,6 +32,34 @@
       "img_url": "",
       "keywords": ["mechanical", "front", "rear", "post mount", "flat mount"],
       "date_modified": "4-18-2026"
+    },
+    {
+      "brand": "Shimano",
+      "name": "Mineral Oil Disc Brake Fluid",
+      "price": 29.94,
+      "url": "https://www.amazon.com/SHIMANO-SM-DB-OIL-Mineral-Oil/dp/B001E4MH84/ref=sr_1_1?crid=OKQEM25X464N&dib=eyJ2IjoiMSJ9.XQI9rCYtHVQBPvywD--Iu63-5x5F1yDHrjWAqqsngr5rW1wUJqyM4GP6JlWaE8b_sfEwbUHGfibpc1qUtFzK2v6TLMGBGxg6OovQW2bGAdgG5EUj-7ObENdR3mypD-hYqG26yHb3K5jnuaEZOXwZnUe2A6lhOhKpcijKcgVK0exKgVXkZSOUh1fOVOMPsj7TwWpWjBbTLMCkMoIVr0eOyP84sweeftDOYLMW8Q0jjRXF_m0k0L2fAENUxWgI_55adETbkb4a_-geKY0k-8qeWzCm7_oDaTcTzYhdwOmyaPk.VNfm-BG_iCWYiHreS4sxZhsLtvBDePMP80g7h381_Jk&dib_tag=se&keywords=shimano+mineral+oil+brake+fluid&qid=1776810990&sprefix=mineroal+oil+brake+%2Caps%2C217&sr=8-1",
+      "img_url": "",
+      "keywords": ["fluid", "maintenance"],
+      "date_modified": "4-21-2026"
+    },
+    {
+      "brand": "AGPTEK",
+      "name": "Disk Brake Pads",
+      "price": 13.99,
+      "url": "https://www.amazon.com/AGPTEK-Performance-Spring-Mountain-Brakes/dp/B07THYX7SZ/ref=sr_1_6?crid=2GIKQM8L5SMGU&dib=eyJ2IjoiMSJ9.vHtN2ZIuqMqkZWxid3t4XR_yPpJ0MmeigBSSgSvmG9J4c1BFXwumvoU2Uvw91UHwOFQLauRUj2qN8hoqd-pfMlXo72iw-J2y07Sy6FFdLtPpbpC_mlCVK7jj7pSSoyVzCIbs5gahR5oeFlLvRk5ePdFQq9DoJSUWuIohiAWm9OpUVje6gFTbkWIKxzYSkV-GYtQQ1lanS2_Tugp5fH5KtZFjjfZOfZooqn1aetNVENw-7TF6MvFRW3xUms6MQtYstPYZLe7ZDQ7UCfNEZoOJlfXdXoNesoVaRr_wS5y5X10.w2NSJF7DBZvRMgJInnuR0zZVKhHxeRKlyXh9soSnuAw&dib_tag=se&keywords=shimano%2Bbrake%2Bpads%2Bmtb&qid=1776811124&sprefix=shimano%2Bbrake%2Bpads%2Bmtb%2Caps%2C187&sr=8-6&th=1",
+      "img_url": "",
+      "keywords": ["pads", "maintenance", "front", "rear"],
+      "date_modified": "4-21-2026"
+    }
+    ,
+    {
+      "brand": "Bucklos",
+      "name": "Disc Brake Rotor",
+      "price": 9.99,
+      "url": "https://www.amazon.com/BUCKLOS-Stainless-Opposite-Distance-Mountain/dp/B0C5M75Z3Z/ref=sr_1_8?crid=3EMHL7G9LVLU2&dib=eyJ2IjoiMSJ9.1Iyqd8Xf-OJyoeN6Y8hPtCree3aZMVSmfQh0c-tcjQ3KkHXQDyANnnsLUR2OWC2USFaJnSHZvJIfnSZVSqVl-Vx6OnuQGtd5TFyv5_-uzVIhm_L71gbhwi1TpN0H4Bkla_EyM8qFnaQf3N_k1zQkz0H8PV0TPhtsx15n5eC-W2rsZ0-VSsW-KdCJiwpnSTr1bhWd3ViLTAcSBEzMHgdyfYWew0LReKcx4Ha1fZQdwmDF66ElNcqUfHNLoWXf1pxEtKLcLXh7Uz1tuLfDM-SoU3Q2nLF-qPzH0V_AdHuqM1M.i4D3czqsov_s7goQjGj5-Wc5zNA7C9y7iOGirR7jXzs&dib_tag=se&keywords=mtb%2Bbrake%2Brotors%2Bshimano&qid=1776811310&sprefix=mtb%2Bbrake%2Brotors%2Bs%2Caps%2C183&sr=8-8&th=1",
+      "img_url": "",
+      "keywords": ["rotor", "maintenance", "front", "rear"],
+      "date_modified": "4-21-2026"
     }
   ]
 }

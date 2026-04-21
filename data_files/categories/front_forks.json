@@ -6,13 +6,50 @@
 
     {
       "brand": "RockShox",
-      "name": "Domain RC",
+      "name": "Domain RC Fork",
       "price": 379.99,
       "url": "https://www.jensonusa.com/rockshox-domain-rc-275-fork",
       "img_url": "",
-      "keywords": ["air", "27.5\"", "170mm"],
+      "keywords": ["air", "27.5\"", "170mm", "boost"],
       "date_modified": "4-20-2026"
+    },
+    {
+      "brand": "Marzocchi",
+      "name": "Bomber Z1 Fork",
+      "price": 729.00,
+      "url": "https://www.rei.com/product/223224/marzocchi-bomber-z1-suspension-fork-kabolt-axle",
+      "img_url": "",
+      "keywords": ["air", "29\"", "170mm", "boost"],
+      "date_modified": "4-21-2026"
+    },
+    {
+      "brand": "RockShox",
+      "name": "ZEB Charger R Fork",
+      "price": 713.00,
+      "url": "https://www.rei.com/product/227092/rockshox-zeb-charger-r-suspension-fork",
+      "img_url": "",
+      "keywords": ["air", "27.5\"", "170mm", "boost"],
+      "date_modified": "4-21-2026"
+    },
+    {
+      "brand": "Fox",
+      "name": "36 Performance Fork",
+      "price": 299.00,
+      "url": "https://www.jensonusa.com/fox-36-performance-e-tuned-grip-275-fork-oe-packaged",
+      "img_url": "",
+      "keywords": ["air", "27.5\"", "160mm", "boost"],
+      "date_modified": "4-21-2026"
+    },
+    {
+      "brand": "Ritchey",
+      "name": "WCS Carbon Fork",
+      "price": 637.95,
+      "url": "https://www.jensonusa.com/ritchey-wcs-carbon-29-mountain-fork?_br_psugg_q=rigid+fork",
+      "img_url": "",
+      "keywords": ["rigid", "29\"", "9mm qr"],
+      "date_modified": "4-21-2026"
     }
+
     
   ]
 }

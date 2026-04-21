@@ -12,6 +12,42 @@
       "img_url": "",
       "keywords": ["27.5\"", "set", "boost", "110mm", "148mm"],
       "date_modified": "4-18-2026"
+    },
+    {
+      "brand": "WTB",
+      "name": "Trail Boss Tire",
+      "price": 32.95,
+      "url": "https://www.rei.com/product/875430/wtb-trail-boss-29er-comp-tire-29-x-225",
+      "img_url": "",
+      "keywords": ["29\"", "tire"],
+      "date_modified": "4-21-2026"
+    },
+    {
+      "brand": "Continental",
+      "name": "Mountain King Tire",
+      "price": 65.95,
+      "url": "https://www.rei.com/product/152167/continental-mountain-king-shieldwall-tubeless-tire-275-x-23",
+      "img_url": "",
+      "keywords": ["27.5\"", "tire", "tubeless"],
+      "date_modified": "4-21-2026"
+    },
+    {
+      "brand": "Cannondale",
+      "name": "Presta 48 mm Valve Tube",
+      "price": 9.00,
+      "url": "https://www.rei.com/product/C03228/cannondale-presta-48-mm-valve-tube-275-x-20-25",
+      "img_url": "",
+      "keywords": ["27.5\"", "tube", "presta"],
+      "date_modified": "4-21-2026"
+    },
+    {
+      "brand": "Continental",
+      "name": "42mm Presta Valve Tube",
+      "price": 15.99,
+      "url": "https://www.amazon.com/Continental-27-5x1-75-2-5-584x47-60c-Inner-Tubes/dp/B09M4TJ446/ref=sr_1_2_sspa?crid=2BVADVPP2SU6Z&dib=eyJ2IjoiMSJ9.yMCFrvfNO3Pfgoas_0HZOJzhr4UP5mWGhGl3LZhbmlvTqJIZQudvucQgxS1hbxV61YpL9L68I3-Fr1pJ_dBJZziQDf9Ff3UHGKjt_EbXFuqIbNktAi_FSGBVogT0JPCy7-mKTKefMRvOw8L5eRnu51L8njnnH4Ola8WjCmfc_2eD_uwMNmZtdJx0PM4fg6jw-XKW-BvlBCnS-TE4Rps2LUp32rBzaOq6zzHMZ_FNcHjuZTrawwg8srSyIw04x0t9u5seVulQGgV4U9WC-oeAr60CtZQu0p12-cUAd48WVq0.qIvNqCOEcG5fIlpFuaKJTu10iA7PjdFJ7LT6HuaKXh4&dib_tag=se&keywords=mtb%2Btubes&qid=1776813411&sprefix=mtb%2Btubes%2Caps%2C176&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1",
+      "img_url": "",
+      "keywords": ["27.5\"", "tube", "presta"],
+      "date_modified": "4-21-2026"
     }
   ]
 }

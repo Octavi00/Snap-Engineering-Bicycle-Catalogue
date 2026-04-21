@@ -6,12 +6,46 @@
 
     {
       "brand": "Giro",
-      "name": "Fixture",
+      "name": "Fixture Helmet",
       "price": 84.95,
       "url": "https://www.amazon.com/Giro-Fixture-MIPS-Bike-Helmet/dp/B0GFBXKX6D/ref=sr_1_16?crid=27H8CSSA986OB&dib=eyJ2IjoiMSJ9.Jyljv_lkaon79kgpy9Mu6LxzZ0zs41-LdINs-8GYrPdXOvD5usJJPkrgD_vdSeWck3waTg3FH3JbUMbZqa8wF1vA0EqUPQ3C7bXeuvM69HRxf2mG-b6UMvZHzV0IMmnyuE1RlqDjC6wBlYgtflIHEjm6Ss-wG2C8_b1jlTW3kJIjDHaR4dCzcT5t_bEw1TTkog4UUa162XWiWsOhyY9AHIL8PMCVskYoL963FZSFUyl3c7FQXT7ksTWvL_gxYzUXTY2zwOkBEmpqqMHMN3du4Mp9kopCkS0bhkahuEq19yw.IqRu5z89kDIwQisFuvaZqk3weNNnijct2rQGAeVvZLg&dib_tag=se&keywords=bike%2Bhelmet&qid=1776569831&sprefix=mountain%2Bbike%2Bhelmet%2Caps%2C200&sr=8-16&th=1",
       "img_url": "",
-      "keywords": ["helmet", "mips", "half-face"],
+      "keywords": ["helmet", "safety"],
       "date_modified": "4-18-2026"
+    },
+    {
+      "brand": "Park Tool",
+      "name": "Polylube 1000",
+      "price": 10.95,
+      "url": "https://www.rei.com/product/760718/park-tool-polylube-1000-4-oz",
+      "img_url": "",
+      "keywords": ["grease", "maintenance"],
+      "date_modified": "4-21-2026"
+    },
+    {
+      "brand": "Muc-Off",
+      "name": "All Weather Lube",
+      "price": 12.00,
+      "url": "https://www.rei.com/product/232921/muc-off-all-weather-lube",
+      "img_url": "",
+      "keywords": ["oil", "maintenance"],
+      "date_modified": "4-21-2026"
+    },{
+      "brand": "PNW",
+      "name": "Loam Handlebar Grips",
+      "price": 29.00,
+      "url": "https://www.rei.com/product/170440/pnw-components-loam-handlebar-grips",
+      "img_url": "",
+      "keywords": ["accessory"],
+      "date_modified": "4-21-2026"
+    },{
+      "brand": "Camelbak",
+      "name": "Mule 5 Hydration Waist Pack",
+      "price": 99.00,
+      "url": "https://www.rei.com/product/245481/camelbak-mule-5-hydration-waist-pack",
+      "img_url": "",
+      "keywords": ["hydration", "apparel"],
+      "date_modified": "4-21-2026"
     }
     
   ]

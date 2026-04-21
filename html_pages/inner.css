@@ -109,7 +109,7 @@ button {
 .item-card {
   display: flex;
   gap: 15px;
-  background-color: rgba(90, 90, 90, 0.8);
+  background-color: rgba(90, 90, 90, 0.85);
   padding: 15px;
   border-radius: 10px;
   align-items: center;
@@ -175,6 +175,11 @@ button {
 
 .item-name {
   margin: 0;
+}
+
+.item-brand {
+  margin: 5px 0;
+  color: white;
 }
 
 .item-price {

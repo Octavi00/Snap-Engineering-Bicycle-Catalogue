@@ -5,37 +5,37 @@
         {
         "name": "Front Forks",
         "page_url": "html_pages/categories.html?data=front_forks",
-        "img_url": "images/categories/front_forks.jpg"
+        "img_url": "./images/categories/front_forks.jpg"
         },
         {
         "name": "Brake Systems",
         "page_url": "html_pages/categories.html?data=brake_systems",
-        "img_url": "images/categories/brake_systems.jpg"
+        "img_url": "./images/categories/brake_systems.jpg"
         },
         {
         "name": "Rear Suspension",
         "page_url": "html_pages/categories.html?data=rear_suspension",
-        "img_url": "images/categories/rear_suspension.jpg"
+        "img_url": "./images/categories/rear_suspension.jpg"
         },
         {
         "name": "Wheels",
         "page_url": "html_pages/categories.html?data=wheels",
-        "img_url": "images/categories/wheels.jpg"
+        "img_url": "./images/categories/wheels.jpg"
         },
         {
         "name": "Powertrains",
         "page_url": "html_pages/categories.html?data=powertrains",
-        "img_url": "images/categories/powertrains.jpg"
+        "img_url": "./images/categories/powertrains.jpg"
         },
         {
         "name": "Miscellaneous",
         "page_url": "html_pages/categories.html?data=miscellaneous",
-        "img_url": "images/categories/miscellaneous.jpg"
+        "img_url": "./images/categories/miscellaneous.jpg"
         },
         {
         "name": "All",
         "page_url": "html_pages/categories.html?data=all",
-        "img_url": "images/categories/all.jpg"
+        "img_url": "./images/categories/all.jpg"
         }
     ]
 }

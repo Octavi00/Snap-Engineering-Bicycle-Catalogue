@@ -24,37 +24,10 @@
  */
 
 
-let main_part_categories = [
-  "Front_Forks",
-  "Brake_systems",
-  "Rear_Suspension",
-  "Wheels",
-  "Powertrains",
-  "Miscellaneous",
-  "All",
-]
 
-
-//Here are some more specific category breakdowns for generalized names
-let brake_systems_parts = [
-  "Fluids",
-  "Pads",
-  "Calipers",
-  "Hoses",
-  "Levers",
-  "Brake Kits",
-]
-
-let powertrains_parts = [
-  "Chains",
-  "Deraileurs",
-  "Cassettes",
-  "Cranksets",
-]
-/////////////////////////////////////////////////////
 
 async function loadHomePage() {
-  const response = await fetch("data_files/home_page.json");
+  const response = await fetch("./data_files/home_page.json");
   const data = await response.json();
 
   const mainCategory_Container = document.getElementById("main-category-container");
